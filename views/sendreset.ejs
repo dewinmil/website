@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <title>Login</title>
+  <link href="../css/login.css" rel="stylesheet" type ="text/css">
+  <style>
+
+    td {color: white; font-size: 15px; padding-top: 10;}
+  </style>
+</head>
+
+<body>
+  <header>
+    <% include partial/nav.ejs %>
+    <form action="/users/sendreset" method="post">
+      <div class="loginbox">
+        <img src="../images/avatar.png", class="avatar">
+        <h1>Reset Password</h1>
+        <form>
+          <%if(typeof errors != "undefined"){  %>
+          <%  var i; %>
+          <%  for(i=0; i < errors.length; i++){ %>
+            <p1><%= errors[i].msg %></p1><br>
+          <%}  %>
+          <%}else{ %>
+
+          <%} %>
+          <p>Email Address</p>
+          <input type="text" name="email" placeholder="Enter Email Address">
+          <input type="submit" name="" value="Submit"><br>
+          <a href="/users/login">Already have an account?</a><br>
+          <a href="/users/register">Don't have an account?</a>
+        </form>
+      </div>
+    </form>
+  </header>
+</body>
+
+</html>

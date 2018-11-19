@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <title>Login</title>
+  <link href="../css/login.css" rel="stylesheet" type ="text/css">
+  <style>
+
+    td {color: white; font-size: 15px; padding-top: 10;}
+  </style>
+</head>
+
+<body>
+  <header>
+    <% include partial/nav.ejs %>
+    <form action="/users/reset" method="post">
+      <div class="loginbox">
+        <img src="../images/avatar.png", class="avatar">
+        <h1>Reset Pasword</h1>
+        <form>
+          <%if(typeof errors != "undefined"){  %>
+          <%  var i; %>
+          <%  for(i=0; i < errors.length; i++){ %>
+            <p1><%= errors[i].msg %></p1><br>
+          <%}  %>
+          <%}else{ %>
+
+          <%} %>
+          <p>Password</p>
+          <input type="password" name="password" placeholder="Enter Password">
+          <p>Re-Enter Password</p>
+          <input type="password" name="password2" placeholder="Re-Enter Password">
+          <input type="submit" name="" value="Login"><br>
+          <a href="/users/login">Already have an account?</a><br>
+          <a href="/users/register">Don't have an account?</a>
+        </form>
+      </div>
+    </form>
+  </header>
+</body>
+
+</html>

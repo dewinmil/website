@@ -1,0 +1,22 @@
+.btn
+{
+  border: 1px solid white;
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 15;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn:hover
+{
+  background-color: darkorange;
+  transition: all 0.5s ease-in;
+}
+
+.center
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,109 @@
+<nav>
+  <style>
+    .main-nav
+    {
+      text-align:  right;
+      list-style: none;
+      margin-right: 2vw;
+    }
+
+    .main-nav li
+    {
+      display: inline-block;
+      list-style: none;
+      margin-top: 4vh;
+      margin-right: 3vw;
+    }
+
+    .main-nav li a
+    {
+      color: darkgray;
+      text-decoration: none;
+      padding: .75vh 2vw;
+      font-family: "Roboto", sans-serif;
+      font-size: calc(6px + 1vw);
+    }
+
+    .main-nav li a:hover
+    {
+      border: 1px solid white;
+      background-color: darkorange;
+      transition: all 0.5s ease-in;
+    }
+
+    .sticky
+    {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 500;
+    }
+
+    .sticky-filler
+    {
+      position:fixed;
+      visibility: hidden;
+      height: 10vh;
+    }
+
+    .content
+    {
+      position: relative;
+    }
+
+    .logo img
+    {
+      width: 10vh;
+      height: auto;
+      float: left;
+      margin-left: 30;
+    }
+
+    .row
+    {
+      max-width: 100vw;
+      margin: auto;
+    }
+
+  </style>
+  <body>
+    <header class="sticky" id="myHeader">
+      <div class="row">
+        <div class="logo">
+          <img src="../images/Logo.png">
+        </div>
+        <ul class = "main-nav">
+          <li class><a href = "/">Home</a></li>
+          <li><a href = "">Services</a></li>
+          <% if(isAuthenticated) {%>
+            <li><a href = "profile">About</a></li>
+            <li><a href = "/users/logout">Logout</a></li>
+          <% }else{%>
+            <li><a href = "/users/register">Register</a></li>
+            <li><a href = "/users/login">Login</a></li>
+          <% }%>
+        </ul>
+      </div>
+    </header>
+
+    <div class ="sticky-filler" id="filler">
+      <header>
+        <div class="row">
+          <div class="logo">
+            <img src="../images/Logo.png">
+          </div>
+          <ul class = "main-nav">
+            <li class><a href = "/">Home</a></li>
+            <li><a href = "">Services</a></li>
+            <% if(isAuthenticated) {%>
+              <li><a href = "profile">About</a></li>
+              <li><a href = "/users/logout">Logout</a></li>
+            <% }else{%>
+              <li><a href = "/users/register">Register</a></li>
+              <li><a href = "/users/login">Login</a></li>
+            <% }%>
+          </ul>
+        </div>
+      </header>
+    </div>
+</nav>

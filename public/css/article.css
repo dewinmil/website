@@ -1,0 +1,39 @@
+body
+{
+
+  font-family: monospace;
+}
+
+article
+{
+  padding: .05in 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* this will get us a little color at the top of the article so you can tell
+  when one ends and another starts - not useful atm.
+  background: linear-gradient(hsl(55, 100%, 95%), white 1in);*/
+}
+
+article * { grid-column: 2 / 9 ; }
+
+h2, p:not(:last-child) {margin-bottom: 2.4rem; }
+
+p   { font: 400 1.0rem/1.5 Roboto;   color: hsl(000,   0%, 33%); }
+h1  { font: 700 2.0rem/1.2 Roboto;   color: hsl(000,   0%, 33%); }
+h2  { font: 400 1.5rem/1.2 Roboto;   color: hsl(000,   0%, 33%); }
+h3  { font: 700 1.5rem/1.2 Roboto;   color: hsl(250, 100%, 67%); }
+time{ font: 700 1.0rem/1.2 Roboto;   color: hsl(250, 100%, 67%); }
+article a{ box-shadow: inset 0 -.25em hsl(55, 100%, 75%); }
+
+@media (max-width 8.5in) {:root {font-size: 2px; } }
+@media (max-width 5in) {:root {font-size: 2px; } }
+
+.darkgray-highlight
+{
+  background-color: darkgray;
+}
+
+.gray-highlight
+{
+  background-color: lightgray;
+}

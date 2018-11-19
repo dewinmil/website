@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <title>Login</title>
+  <link href="../css/login.css" rel="stylesheet" type ="text/css">
+  <style>
+
+    td {color: white; font-size: 15px; padding-top: 10;}
+  </style>
+</head>
+
+<body>
+  <% include partial/nav.ejs %>
+  <img src="../images/pic3.jpg" class ="bg-image-top">
+  <form action="/users/login" method="post">
+    <div class="loginbox">
+      <img src="../images/avatar.png", class="avatar">
+      <h1>Login Here</h1>
+      <form>
+        <%if(typeof errors != "undefined"){  %>
+        <%  var i; %>
+        <%  for(i=0; i < errors.length; i++){ %>
+          <p1><%= errors[i].msg %></p1><br>
+        <%}  %>
+        <%}else{ %>
+        <%} %>
+        <p1 class="hidden" id="error-message">Invalid Email or Password</p1><br>
+        <p>Email Address</p>
+        <input type="text" name="email" placeholder="Enter Email Address">
+        <p>Password</p>
+        <input type="password" name="password" placeholder="Enter Password">
+        <input type="submit" name="" value="Login"><br>
+        <a href="/users/sendreset">Lost your password?</a><br>
+        <a href="/users/register">Don't have an account?</a>
+      </form>
+    </div>
+  </form>
+</body>
+<script>
+  var message = document.getElementById("error-message");
+  if(performance.navigation.type == 1){
+    //do nothing
+  }else if(document.referrer === window.location.href){
+      message.classList.remove("hidden");
+  }
+</script>
+
+</html>
